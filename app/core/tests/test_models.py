@@ -53,6 +53,15 @@ class ModelTests(TestCase):
 
         self.assertEqual(str(tag), tag.name)
 
+    def test_ingredient_str(self):
+        """Test the ingredient string representation"""
+        ingredient = models.Ingredient.objects.create(
+            user=sample_user(),
+            name='Cucumber'
+        )
+
+        self.assertEqual(str(ingredient), ingredient.name)
+
 #    def test_user_page_change(self):
 #        """Test that the user edit page works"""
 #        url = reverse('admin:core_user_change', args=[self.user.id])
